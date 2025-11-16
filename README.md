@@ -92,13 +92,13 @@ docker compose up -d
 ### 4. View your heatmap
 
 ```
-http://<your-server-ip>:8085/heatmap.png
+http://<your-server-ip>:8246/heatmap.png
 ```
 
 Status:
 
 ```
-http://<your-server-ip>:8085/status
+http://<your-server-ip>:8246/status
 ```
 
 ---
@@ -127,7 +127,7 @@ Sometimes you want to rebuild the entire 92-day heatmap immediately (e.g., after
 ### Option A — Call the API:
 
 ```
-http://<your-server-ip>:8085/force-rerun
+http://<your-server-ip>:8246/force-rerun
 ```
 
 You will get:
