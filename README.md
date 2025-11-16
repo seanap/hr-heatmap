@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="docs/heatmap.png" height="300" style="border-radius:8px;">
+  <img src="docs/heatmap-turbo.png" height="300" style="border-radius:8px; margin-right:12px;">
+  <img src="docs/heatmap-mocha.png" height="300" style="border-radius:8px;">
 </p>
 
 
