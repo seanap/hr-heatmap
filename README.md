@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="docs/heatmap.png" height="300" style="border-radius:8px;">
+</p>
+
+
 # 📊 HR-Heatmap  
 ### Daily heart-rate heatmap generator powered by Garmin Connect  
 
