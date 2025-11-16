@@ -159,7 +159,7 @@ docker restart hr-heatmap
 | TIMEZONE | Local timezone | UTC |
 | TRAILING_DAYS | Days in the heatmap | 92 |
 | RUN_HOUR_UTC | Scheduler run time | 4 |
-| COLORMAP_NAME | Matplotlib colormap | turbo |
+| COLORMAP_NAME | Matplotlib colormap | turbo, catppuccin-mocha |
 | IMAGE_WIDTH | PNG width | 920 |
 | IMAGE_HEIGHT | PNG height | 1440 |
 | DRAW_HOUR_LINES | Horizontal gridlines | true |
