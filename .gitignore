@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Env / secrets
+.env
+
+# Local data output
+data/cache/
+data/output/
