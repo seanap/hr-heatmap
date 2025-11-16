@@ -128,7 +128,7 @@ Sometimes you want to rebuild the entire 92-day heatmap immediately (e.g., after
 ### Option A — Call the API:
 
 ```
-http://<your-server-ip>:8246/force-rerun
+http://<your-server-ip>:8246/force-rebuild
 ```
 
 You will get:
@@ -137,13 +137,7 @@ You will get:
 {"status":"ok","message":"Pipeline forced to run now"}
 ```
 
-### Option B — Inside the container
-
-```bash
-docker exec -it hr-heatmap python -c "from app.orchestrator import run_full_pipeline; run_full_pipeline()"
-```
-
-### Option C — Restart the container
+### Option B — Restart the container
 
 ```bash
 docker restart hr-heatmap
