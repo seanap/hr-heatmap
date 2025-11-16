@@ -5,7 +5,7 @@
 
 
 # 📊 HR-Heatmap  
-### Daily heart-rate heatmap generator powered by Garmin Connect  
+### Heart-rate heatmap generator powered by Garmin Connect  
 
 ---
 
@@ -13,7 +13,7 @@
 
 **HR-Heatmap** automatically downloads your heart-rate history from Garmin Connect, transforms it into a 1440×92 minute-resolution table, and renders a beautiful heatmap image daily.
 
-It runs entirely **locally**, and exposes a simple `<ip>:<port>/heatmap.png` endpoint ideal for dashboards like **Glance**, **Home Assistant**, or any image widget.
+It runs entirely **locally**, and exposes a simple `<ip>:8246/heatmap.png` endpoint ideal for dashboards like **Glance**, **Home Assistant**, or any image widget.
 
 ---
 
@@ -72,9 +72,26 @@ cp .env.example .env
 nano .env
 ```
 
-### 2. Create your `.env`
+<details>
+<summary>Docker Compose using Docker Hub Image</summary>
 
-Edit `.env`:
+```bash
+services:
+  hr-heatmap:
+    image: seanap/hr-heatmap:latest
+    container_name: hr-heatmap
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data/cache:/data/cache
+      - ./data/output:/data/output
+    ports:
+      - "8246:8000"
+```
+</details>  
+
+### 2. Create & Edit your `.env`
 
 ```env
 GARMIN_USER=your-email@example.com
@@ -82,6 +99,11 @@ GARMIN_PASS=your-garmin-password
 TIMEZONE=America/New_York
 TRAILING_DAYS=92
 RUN_HOUR_UTC=4
+COLORMAP_NAME=catppuccin-mocha # [turbo, catppuccin-mocha, https://matplotlib.org/stable/users/explain/colors/colormaps.html]
+IMAGE_WIDTH=920
+IMAGE_HEIGHT=1440
+DRAW_HOUR_LINES=false
+DRAW_DAY_LINES=false
 ```
 
 ### 3. Launch
