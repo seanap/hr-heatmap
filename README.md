@@ -185,5 +185,6 @@ docker restart hr-heatmap
 
 - Inspired by original HR heatmap scripts shared online by Reddit u/Salt-Cress-7645
 - https://www.reddit.com/r/Garmin/comments/1oxre10/comment/noza21l/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1& 
+- ChatGPT 5.1 Extended
 
 
