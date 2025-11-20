@@ -5,7 +5,7 @@ import asyncio
 from datetime import datetime, timedelta, time as dtime
 from pathlib import Path
 
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, Response, Request
 from fastapi.responses import FileResponse, JSONResponse
 
 from .config import settings
@@ -75,6 +75,17 @@ async def get_heatmap():
             )
 
     return FileResponse(settings.heatmap_png_path, media_type="image/png")
+
+
+@app.get("/heatmap")
+async def get_heatmap_json(request: Request):
+    """
+    Return a JSON object with the URL to the heatmap image.
+    Compatible with Glance custom-api widget.
+    """
+    # Construct the absolute URL to the image endpoint
+    image_url = str(request.url_for("get_heatmap"))
+    return {"url": image_url}
 
 
 @app.get("/status")
